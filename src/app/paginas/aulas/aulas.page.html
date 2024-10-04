@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="aluno"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Aulas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">aulas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <h1>Engenharia de Software III</h1>
+  <br>
+  <h4>Ementa</h4>
+  <p>
+    Conceitos, evolução e importância de arquitetura de software. Padrões de Arquitetura. Padrões de Distribuição. 
+    Camadas no desenvolvimento de software. Tipos de Arquitetura de Software. Visões na arquitetura de software. 
+    Modelo de Análise e Projetos. Formas de representação. O processo de desenvolvimento. Mapeamento para implementação. 
+    Integração do sistema. Testes: planejamento e tipos. Manutenção. Documentação.
+  </p>
+
+  <h4>Objetivos</h4>
+  <p>
+    Conhecer e aplicar padrões ao processo de software. Mapear modelos de representação.
+  </p>
+  <br>
+  <h4>Cargas</h4>
+  <ion-list>
+    <ion-item>
+      <ion-label>Semanais: </ion-label>
+      <ion-label>4</ion-label>
+      <ion-label>Teóricas: </ion-label>
+      <ion-label>2</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Práticas: </ion-label>
+      <ion-label>2</ion-label>
+      <ion-label>Total: </ion-label>
+      <ion-label>80</ion-label>
+    </ion-item>
+  </ion-list>
+  <br>
+  <h4>Avaliações</h4>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card button (click)="abrirNotas()">
+          <ion-card-header>
+            <ion-card-title>P1 - Primeira Prova</ion-card-title>
+            <br>
+            <ion-badge color="primary">Nota: 8.5</ion-badge>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card button (click)="abrirNotas()">
+          <ion-card-header>
+            <ion-card-title>P2 - Segunda Prova</ion-card-title>
+            <br>
+            <ion-badge color="light">Nota: A ser definida</ion-badge>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card button (click)="abrirNotas()">
+          <ion-card-header>
+            <ion-card-title>P3 - Prova de Recuperação</ion-card-title>
+            <br>
+            <ion-badge color="light">Nota: A ser definida</ion-badge>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card button (click)="abrirNotas()">
+          <ion-card-header>
+            <ion-card-title>Trabalho Extracurricular</ion-card-title>
+            <br>
+            <ion-badge color="light">Nota: A ser definida</ion-badge>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card button (click)="abrirNotas()">
+          <ion-card-header>
+            <ion-card-title>Seminário - Apresentação UML</ion-card-title>
+            <br>
+            <ion-badge color="warning">Nota: 5.0</ion-badge>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+  <h4>Presenças</h4>
+  <ion-datetime presentation="date" day="values" [isDateEnabled]="isWeekday" [highlightedDates]="highlightedDates"></ion-datetime>
+  
+</ion-content>

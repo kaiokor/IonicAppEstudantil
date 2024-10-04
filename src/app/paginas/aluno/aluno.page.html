@@ -1,0 +1,138 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Aluno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      
+    </ion-toolbar>
+  </ion-header>
+
+  <h1></h1>
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-avatar class="avatar_aluno"width="300px">
+              <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col>
+            <h2>Nome:</h2>
+            <p>Samara Rodrigues de Lima Torres Neta</p>
+            <br>
+            <h2>Curso:</h2>
+            <p>Analise e Desenvolvimento de Sistemas</p>
+          </ion-col>
+          <ion-col>
+            <h2>Semestre:</h2>
+            <p>4° Semestre</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <h1> Notas do Aluno</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item button (click)="abrirNotas()" detail="true">
+            <ion-label>Eng. Software III - P1</ion-label>
+            <ion-badge color="primary">8.5</ion-badge>
+          </ion-item>
+          <ion-item button (click)="abrirNotas()" detail="true">
+            <ion-label>Eng. de Software III - P2</ion-label>
+            <ion-badge color="light">0.0</ion-badge>
+          </ion-item>
+          <ion-item button (click)="abrirNotas()" detail="true">
+            <ion-label>S.O. II - Linux</ion-label>
+            <ion-badge color="light">0.0</ion-badge>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item button (click)="abrirNotas()" detail="true">
+            <ion-label>OOP - JAVA - Lista 5</ion-label>
+            <ion-badge color="danger">3.0</ion-badge>
+          </ion-item>
+          <ion-item button (click)="abrirNotas()" detail="true">
+            <ion-label>Banco de Dados - MER e DER</ion-label>
+            <ion-badge color="warning">6.6</ion-badge>
+          </ion-item>
+          <ion-item button (click)="abrirNotas()" detail="true">
+            <ion-label>Dispositivos Móveis - P1</ion-label>
+            <ion-badge color="primary">9.0</ion-badge>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button fill="outline" (click)="abrirPagina()" expand="block">Ver mais</ion-button>
+  
+    <h1>Aulas da Matrícula</h1>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card button (click)="abrirAulas()">
+            <ion-card-header>
+              <ion-card-title>Engenharia de Software III</ion-card-title>
+              <ion-card-subtitle>Quarta-Feira</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        
+        <ion-col>
+          <ion-card button>
+            <ion-card-header>
+              <ion-card-title>Banco de Dados</ion-card-title>
+              <ion-card-subtitle>Segunda-Feira</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card button>
+            <ion-card-header>
+              <ion-card-title>Orientação a Objetos - JAVA</ion-card-title>
+              <ion-card-subtitle>Terça-Feira</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      
+        <ion-col>
+          <ion-card button>
+            <ion-card-header>
+              <ion-card-title>Sistemas operacionais II - Linux</ion-card-title>
+              <ion-card-subtitle>Quinta-Feira</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card button>
+            <ion-card-header>
+              <ion-card-title>Eletiva Programacao para Dispositivos Moveis</ion-card-title>
+              <ion-card-subtitle>Sexta-Feira</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card button>
+            <ion-card-header>
+              <ion-card-title>Metodologia da Pesquisa Cientifico Tecnologica</ion-card-title>
+              <ion-card-subtitle>Terça-Feira</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+</ion-content>
