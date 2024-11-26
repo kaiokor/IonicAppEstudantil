@@ -5,7 +5,6 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "prebuild": "node generate-env.js",
-    "build": "ng build",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
