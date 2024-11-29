@@ -117,3 +117,11 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.footer-content {
+  width: 150px; 
+  height: 50px; 
+  font-size: 18px; 
+  --background: #e53935; 
+  --color: white;
+}

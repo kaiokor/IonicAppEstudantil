@@ -1,35 +1,66 @@
-import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastController, AlertController, LoadingController } from '@ionic/angular';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.page.html',
   styleUrls: ['./landing.page.scss'],
 })
-export class LandingPage {
-  // Declarar as variáveis email e senha
-  email: string = '';
-  senha: string = '';
+export class LandingPage implements OnInit{
+   
+  loginForm!: FormGroup
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private toastController: ToastController, private alertController: AlertController, public formBuilder:FormBuilder, private loadingCtrl: LoadingController, private authService: AuthenticationService, private router: Router) {}
+    
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email :['', [
+        Validators.required,
+        Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")
+      ]],
+      password :['', [
+        Validators.required,
+        // Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")
+      ]]
+    });
+  }
 
-  // Função de login
-  onLogin() {
-    if (this.email && this.senha) {
-      // Lógica de autenticação, como chamada de API, vai aqui
-      console.log('Login realizado com:', this.email, this.senha);
+
+  get errorControl(){
+    return this.loginForm?.controls;
+  }
+
+  async login(){
+    const loading = await this.loadingCtrl.create();
+    await loading.present();
+    if(this.loginForm.valid){
+      const user = await this.authService.loginUser(this.loginForm.value.email, this.loginForm.value.password).catch((err) => {
+        this.presentToast(err)
+        console.log(err);
+        loading.dismiss();
+      })
       
-      // Navegar para a página principal após login bem-sucedido
-      this.navCtrl.navigateForward('/home');
+      if (user){
+        loading.dismiss()
+        this.router.navigate(['/aluno'])
+      } 
     } else {
-      console.log('Por favor, preencha todos os campos');
+      return console.log('Por favor, forneça os valores corretos!');
     }
   }
 
-  // Função de recuperação de senha
-  onForgotPassword() {
-    console.log('Redirecionando para recuperação de senha');
-    // Navegar para a página de recuperação de senha
-    this.navCtrl.navigateForward('/recuperar-senha');
+  async presentToast(message: undefined) {
+    console.log(message);
+
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 1500,
+      position: 'top',
+    });
+
+    await toast.present();
   }
 }

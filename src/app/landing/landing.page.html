@@ -1,14 +1,14 @@
-<ion-content class="ion-padding">
-  <div class="ion-text-center">
-    <ion-title class="title">Bem-Vindo de volta</ion-title>
-    <p class="subTitle">Faça login e acesse a sua conta</p>
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title" size="large">Bem-Vindo de volta</ion-title>
+    <p class="subtitle">Faça login e acesse a sua conta</p>
   </div>
 
-  <form>
-    <div class="ion-padding-top">
+  <form [formGroup]="loginForm" class="login-form">
+    <div class="ion-padding">
       <!-- Campo de Usuário -->
       <ion-item lines="none">
-        <ion-input placeholder="Usuário" clearInput></ion-input>
+        <ion-input placeholder="E-Mail" formControlName="email" class="input"></ion-input>
         <ion-icon name="person-outline" slot="start"></ion-icon>
       </ion-item>
 
@@ -16,15 +16,14 @@
       <div class="ion-margin-top"></div>
 
       <!-- Campo de Senha -->
-      <div class="forgotpassword">
       <ion-item lines="none">
-        <ion-input type="password" placeholder="Senha" clearInput></ion-input>
+        <ion-input type="password" placeholder="Senha" formControlName="password" class="input"></ion-input>
         <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-      </ion-item>  
+      </ion-item>
+
     </div> 
-    </div>
-    <div class="ion-margin-top">
-      <ion-button expand="full" color="primary" [routerLink]="'/aluno'">Entrar</ion-button>
+    <div class="header">
+      <ion-button color="primary" type="submit" (click)="login()">Entrar</ion-button>
     </div>
   </form>
 </ion-content>

@@ -1,0 +1,39 @@
+.input{
+    font-weight: 300;
+}
+ion-item {
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.header{
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    .subtitle{
+        color: gray;
+        font-size: 0.9rem;
+    }
+    .title{
+        font-size: 2rem;
+    }
+}
+
+.errorInput{
+    color: red;
+    font-weight: 300;
+    font-size: small;
+    padding-top: -16px;
+}
+
+.login-form {
+  flex-direction: column;
+  align-items: center; /* Center the form items */
+  max-width: 460px; /* Set a maximum width for the form */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.input {
+  width: 100%; /* Make the input fields take the full width of the container */
+}
