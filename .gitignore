@@ -76,5 +76,6 @@ Thumbs.db
 
 # APIs
 src/environments/environment.ts
+src/environments/environment.prod.ts
 android/app/google-services.json
 .env
