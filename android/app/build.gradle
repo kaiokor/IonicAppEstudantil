@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
-
 
 android {
     namespace "io.ionic.starter"
@@ -34,7 +32,6 @@ repositories {
 
 
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:33.6.0')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
