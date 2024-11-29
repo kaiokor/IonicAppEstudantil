@@ -1,0 +1,30 @@
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <ion-title class="title">Bem-Vindo de volta</ion-title>
+    <p class="subTitle">Faça login e acesse a sua conta</p>
+  </div>
+
+  <form>
+    <div class="ion-padding-top">
+      <!-- Campo de Usuário -->
+      <ion-item lines="none">
+        <ion-input placeholder="Usuário" clearInput></ion-input>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+      </ion-item>
+
+      <!-- Espaço entre os campos -->
+      <div class="ion-margin-top"></div>
+
+      <!-- Campo de Senha -->
+      <div class="forgotpassword">
+      <ion-item lines="none">
+        <ion-input type="password" placeholder="Senha" clearInput></ion-input>
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      </ion-item>  
+    </div> 
+    </div>
+    <div class="ion-margin-top">
+      <ion-button expand="full" color="primary" [routerLink]="'/aluno'">Entrar</ion-button>
+    </div>
+  </form>
+</ion-content>
