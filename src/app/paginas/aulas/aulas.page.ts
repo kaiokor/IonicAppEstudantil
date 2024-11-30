@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -6,15 +6,11 @@ import { NavController } from '@ionic/angular';
   templateUrl: './aulas.page.html',
   styleUrls: ['./aulas.page.scss'],
 })
-export class AulasPage implements OnInit {
-
+export class AulasPage {
   constructor(public nav: NavController) { }
 
   abrirNotas(){
     this.nav.navigateForward('notas');
-  }
-
-  ngOnInit() {
   }
 
   isWeekday = (dateString: string) => {

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import firebase from 'firebase/compat/app'
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Observable } from 'rxjs';
+import { Auth, User } from '@angular/fire/auth'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(public ngFireAuth: AngularFireAuth) { }
+  constructor(public ngFireAuth: AngularFireAuth, private auth: Auth) { }
 
   async loginUser(email:string,password:string){
     return await this.ngFireAuth.signInWithEmailAndPassword(email, password)
@@ -17,7 +18,7 @@ export class AuthenticationService {
     return await this.ngFireAuth.signOut()
   }
 
-  async getProfile(){
-    return await this.ngFireAuth.currentUser
+  getProfile(): User | null{
+    return this.auth.currentUser;
   }
 }
