@@ -1,6 +1,7 @@
+
 export const environment = {
-  production: true,
-  firebaseConfig : {
+  production: false,
+   firebaseConfig : {
     apiKey: 'AIzaSyCKqdNzQ4ko6lw6kohzOwFlrpj2fWdVyyM',
     authDomain: 'siga2-63823.firebaseapp.com',
     databaseURL: 'https://siga2-63823-default-rtdb.firebaseio.com',
