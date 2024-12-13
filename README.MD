@@ -21,3 +21,5 @@ Infelizmente, o App não está disponivel em um site, então só pode ser baixad
 - [Kaio Gomes](https://github.com/kaiokor);
 - [João Henrique](https://github.com/JoaoHenriqueBR);
 - [José William](https://github.com/JoseWillianJr).
+
+...
