@@ -9,8 +9,8 @@ Desenvolvido usando `Ionic, Angular e Firebase`, foi criado um APP que pode ser 
 - Baixe o `Estudantil.apk` disponível no `Releases`;
 - Execute e instale o App.
 
-### Web
-Infelizmente, o App não está disponivel em um site, então só pode ser baixado localmente:
+### Web (Local)
+O App pode ser baixado localmente:
 
 - Clone o repositório;
 - Instale as dependências: `npm install`
